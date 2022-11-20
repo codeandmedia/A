@@ -3,7 +3,10 @@ name: Create and Publish Docker Image
 on:
   workflow_call:
     inputs:
-      image_name:
+      image_tag:
+        required: true
+        type: string
+      folder:
         required: true
         type: string
 jobs:
@@ -12,4 +15,8 @@ jobs:
 
     steps:      
       - uses: actions/checkout@v2
-      - run: echo "Hello" -- ${{ inputs.image_name }}
+        with:
+          fetch-depth: 2
+          
+      - run: echo "Hello" -- ${{ inputs.image_tag }}
+      - run: echo "Hello" -- ${{ inputs.folder }}
