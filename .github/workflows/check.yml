@@ -2,6 +2,13 @@ name: Check changed folders
 
 on:
   workflow_call:
+    outputs:
+        backend:
+          description: "The first output string"
+          value: ${{ jobs.changes.outputs.backend }}
+        frontend:
+          description: "The second output string"
+          value: ${{ jobs.changes.outputs.frontend }}
 
 jobs:
   changes:
