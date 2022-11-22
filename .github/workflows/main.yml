@@ -19,3 +19,8 @@ jobs:
       - run: echo "Hello" -- ${{ inputs.image_tag }}
       - run: echo "Hello" -- ${{ inputs.package }}
       
+      - name: TestJob
+        if: contains( "${{ inputs.package }}", "commodity" )
+        run: |
+          echo "CLUSTER IS:"
+          echo "${{ inputs.package }}"
