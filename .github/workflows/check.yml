@@ -4,7 +4,7 @@ on:
   workflow_call:
     outputs:
         packages:
-          value: ${{ jobs.changes.outputs.backend }}
+          value: ${{ jobs.changes.outputs.packages }}
 jobs:
   changes:
     runs-on: ubuntu-latest
