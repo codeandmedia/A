@@ -21,8 +21,8 @@ jobs:
             dynamic:
               - 'services/dynamic/**'
             pricing:
-              - 'services/pricing/**'
               - '!services/pricing/workers/**'
+              - 'services/pricing/**'
             pricing-worker:
               - 'services/pricing/workers/**'
 
