@@ -25,5 +25,5 @@ jobs:
               - '!services/pricing/workers/'
             pricing-worker:
               - '!services/pricing/'
-              - 'services/pricing/workers/**'
+              - 'services/pricing/workers/*'
               - '!services/pricing/workers/'
