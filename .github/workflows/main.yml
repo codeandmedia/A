@@ -6,7 +6,7 @@ on:
       image_tag:
         required: true
         type: string
-      folder:
+      package:
         required: true
         type: string
 jobs:
@@ -15,9 +15,7 @@ jobs:
 
     steps:      
       - uses: actions/checkout@v2
-        with:
-          fetch-depth: 2
 
       - run: echo "Hello" -- ${{ inputs.image_tag }}
-      - run: echo "Hello" -- ${{ inputs.folder }}
+      - run: echo "Hello" -- ${{ inputs.package }}
       

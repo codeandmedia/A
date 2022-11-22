@@ -3,26 +3,20 @@ name: Check changed folders
 on:
   workflow_call:
     outputs:
-        backend:
-          description: "The first output string"
+        packages:
           value: ${{ jobs.changes.outputs.backend }}
-        frontend:
-          description: "The second output string"
-          value: ${{ jobs.changes.outputs.frontend }}
-
 jobs:
   changes:
     runs-on: ubuntu-latest
     outputs:
-      backend: ${{ steps.filter.outputs.backend }}
-      frontend: ${{ steps.filter.outputs.frontend }}
+      packages: ${{ steps.filter.outputs.changes }}
     steps:
       - uses: actions/checkout@v3
       - uses: dorny/paths-filter@v2
         id: filter
         with:
           filters: |
-            backend:
-              - 'folder/**'
-            frontend:
-              - 'frontend/**'
+            commodity:
+              - 'services/commodity/**'
+            dynamic:
+              - 'services/dynamic/**'
