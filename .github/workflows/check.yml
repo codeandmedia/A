@@ -16,13 +16,27 @@ jobs:
         id: filter
         with:
           filters: |
+            web:
+              - 'web/**'
             commodity:
               - 'services/commodity/**'
+            ngstorage:
+              - 'services/core/workers/ngstorage/**'
+            notification:
+              - 'services/core/workers/notification/**'
+            permission:
+              - 'services/core/workers/permission/**'
+            selectpicker:
+              - 'services/core/workers/selectpicker/**'
             dynamic:
               - 'services/dynamic/**'
+            la:
+              - 'services/la/**'
             pricing:
               - 'services/pricing/**'
-              - '!services/pricing/workers/'
-            pricing-worker:
-              - 'services/pricing/workers/**'
+              - '!services/pricing/workers/**'
+            pricing-ds:
+              - 'services/pricing/workers/ds/**'
+            pricing-validation:
+              - 'services/pricing/workers/validation/**'
 
